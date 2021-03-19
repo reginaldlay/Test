@@ -1,0 +1,62 @@
+body,
+.padding {
+	background-color: white !important;
+}
+
+button,
+.event {
+	color: #fffcff;
+}
+
+#header {
+	color: #35455d;
+}
+
+#header button {
+	color: #35455d;
+	background-color: white;
+}
+
+#header button:hover {
+	color: white;
+	background-color: #35455d;
+}
+
+#weekdays {
+	color: #247ba0;
+}
+
+.event {
+	background-color: #ff5151;
+}
+
+.day:hover {
+	background-color: #e8f4fa !important;
+	color: black !important;
+}
+
+#newEventModal,
+#deleteEventModal,
+.day + #currentDay {
+	background-color: #35455d;
+	color: white;
+}
+
+#eventTitleInput.error {
+	border-color: red;
+}
+
+#cancelButton,
+#deleteButton {
+	background-color: #d36c6c;
+}
+
+#saveButton,
+#closeButton {
+	background-color: white;
+	color: #35455d;
+}
+
+#modalBackDrop {
+	background-color: rgba(0, 0, 0, 0.8);
+}
