@@ -21,6 +21,7 @@ function openModal(date) {
 
   if (eventForDay) {
     document.getElementById('eventText').innerText = eventForDay.title;
+    document.getElementById('eventDesc').innerHTML = eventForDay.desc;
     deleteEventModal.style.display = 'block';
   } else {
     newEventModal.style.display = 'block';
@@ -154,6 +155,7 @@ function closeModal() {
   deleteEventModal.style.display = 'none';
   backDrop.style.display = 'none';
   eventTitleInput.value = '';
+  eventDescInput.value = '';
   clicked = null;
   load();
 }
@@ -165,6 +167,7 @@ function saveEvent() {
     events.push({
       date: clicked,
       title: eventTitleInput.value,
+      desc: eventDescInput.value
     });
 
     localStorage.setItem('events', JSON.stringify(events));

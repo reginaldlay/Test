@@ -1,6 +1,7 @@
 body,
 .padding {
 	background-color: white !important;
+	border: none !important;
 }
 
 button,
@@ -30,6 +31,10 @@ button,
 
 .event {
 	background-color: #ff5151;
+}
+
+.day {
+	border-color: rgb(224, 224, 224);
 }
 
 .day:hover {

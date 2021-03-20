@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Calendar App Vanilla JS</title>
+		<title>Go Calendar</title>
 
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
@@ -55,15 +55,17 @@
 			<h2>New Event</h2>
 
 			<input id="eventTitleInput" placeholder="Event Title" />
-
+			<textarea
+				id="eventDescInput"
+				placeholder="Event Description"
+			></textarea>
 			<button id="saveButton">Save</button>
 			<button id="cancelButton">Cancel</button>
 		</div>
 
 		<div id="deleteEventModal">
-			<h2>Event</h2>
-
-			<p id="eventText"></p>
+			<h2 id="eventText"></h2>
+			<p id="eventDesc"></p>
 
 			<button id="deleteButton">Delete</button>
 			<button id="closeButton">Close</button>
