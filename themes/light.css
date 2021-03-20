@@ -12,12 +12,14 @@ button,
 	color: #35455d;
 }
 
-#header button {
+#header button,
+#dateButton {
 	color: #35455d;
 	background-color: white;
 }
 
-#header button:hover {
+#header button:hover,
+#dateButton:hover {
 	color: white;
 	background-color: #35455d;
 }
@@ -42,7 +44,8 @@ button,
 	color: white;
 }
 
-#eventTitleInput.error {
+#eventTitleInput.error,
+select.error {
 	border-color: red;
 }
 
@@ -59,4 +62,8 @@ button,
 
 #modalBackDrop {
 	background-color: rgba(0, 0, 0, 0.8);
+}
+
+select {
+	border-color: white;
 }

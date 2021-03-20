@@ -4,7 +4,6 @@
 
 body {
 	display: flex;
-	margin-top: 3rem;
 	justify-content: center;
 }
 
@@ -15,6 +14,14 @@ button {
 	outline: none;
 	padding: 5px;
 	border-radius: 5px;
+}
+
+select {
+	border: none;
+}
+
+select.error {
+	border: 2px solid;
 }
 
 #header button {
@@ -33,6 +40,22 @@ button {
 
 #container {
 	width: 770px;
+}
+
+#navigation {
+	padding: 10px;
+	font-size: 15px;
+	display: flex;
+}
+
+#navigation span {
+	margin-right: 2rem;
+	margin-top: 5px;
+}
+
+#dateButton {
+	font-size: 15px;
+	margin-top: none !important;
 }
 
 #weekdays {

@@ -22,7 +22,22 @@
 					<button id="nextButton">></button>
 				</div>
 			</div>
+			<div id="navigation">
+				<span class="monthDiv">
+					<label for="monthSelector">Month:</label>
+					<select name="monthSelector" id="monthSelector">
+						<option disabled value selected></option>
+					</select>
+				</span>
+				<span class="yearDiv">
+					<text>Year: </text>
+					<select name="yearSelector" id="yearSelector">
+						<option disabled value selected></option>
+					</select>
+				</span>
 
+				<button id="dateButton">>></button>
+			</div>
 			<div id="weekdays">
 				<div>SUN</div>
 				<div>MON</div>
@@ -56,6 +71,7 @@
 
 		<div id="modalBackDrop"></div>
 
-		<script src="./script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="script.js"></script>
 	</body>
 </html>

@@ -1,5 +1,6 @@
 let nav = 0;
 let clicked = null;
+let loadedSelectors = false;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
 const calendar = document.getElementById('calendar');
@@ -7,7 +8,11 @@ const newEventModal = document.getElementById('newEventModal');
 const deleteEventModal = document.getElementById('deleteEventModal');
 const backDrop = document.getElementById('modalBackDrop');
 const eventTitleInput = document.getElementById('eventTitleInput');
+const monthDropdown = document.getElementById('monthSelector');
+const yearDropdown = document.getElementById('yearSelector');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const months =['January', 'February', 'March', 'April', 'May', 'June',  
+               'July', 'August', 'September', 'October', 'November','December']
 
 function openModal(date) {
   clicked = date;
@@ -24,17 +29,27 @@ function openModal(date) {
   backDrop.style.display = 'block';
 }
 
-function load() {
+function getDateVar(name, useNav){
   const dt = new Date();
 
-  if (nav !== 0) {
+  if (nav !== 0 && useNav) {
     dt.setMonth(new Date().getMonth() + nav);
   }
 
-  const day = dt.getDate();
-  const month = dt.getMonth();
-  const year = dt.getFullYear();
+  switch(name){
+    case 'dt': return dt;
+    case 'day': return dt.getDate();
+    case 'month': return dt.getMonth();
+    case 'year': return dt.getFullYear();
+  }
+}
 
+function load() {
+  const dt = getDateVar('dt', true);
+  const day = getDateVar('day', true);
+  const month = getDateVar('month', true);
+  const year = getDateVar('year', true);
+  
   const firstDayOfMonth = new Date(year, month, 1);
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   
@@ -45,9 +60,16 @@ function load() {
     day: 'numeric',
   });
   const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
-
+  
   document.getElementById('monthDisplay').innerText = 
     `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
+
+  const currMonth = `${dt.toLocaleDateString('en-us', { month: 'long' })}`;
+  const currYear = `${year}`;
+
+  if(loadedSelectors === false){
+    loadSelectors(currMonth, currYear);
+  }
 
   calendar.innerHTML = '';
 
@@ -78,6 +100,51 @@ function load() {
     }
 
     calendar.appendChild(daySquare);    
+  }
+}
+
+function loadSelectors(currMonth, currYear){
+  loadedSelectors = true;
+  var monthValue = 0;
+  months.forEach(m =>{
+    var option = document.createElement('option');
+    option.text = m;
+    option.value = monthValue;
+    monthValue++;
+    monthDropdown.add(option);
+  })
+
+  for(let years = -5; years <= 5; years++){
+    optionYear = parseFloat(currYear) + parseFloat(years);
+    var option = document.createElement('option');
+    option.text = optionYear;
+    option.value = optionYear;
+    yearDropdown.add(option);
+  }
+}
+
+function changeDate(){
+  const selMonth = monthDropdown.value;
+  const selYear = yearDropdown.value;
+
+  if(selYear !== '' && selMonth !== ''){
+    monthDropdown.classList.remove('error');
+    yearDropdown.classList.remove('error');
+
+    let yearDiff = 0;
+    let navtemp = nav;
+    const currMonth = getDateVar('month', false);
+    const currYear = getDateVar('year', false);
+  
+    console.log(selYear);
+    console.log(currYear);
+    
+    nav = (selMonth-currMonth) + (selYear-currYear)*12;
+    load();
+  }
+  else{
+    monthDropdown.classList.add('error');
+    yearDropdown.classList.add('error');
   }
 }
 
@@ -116,14 +183,20 @@ function deleteEvent() {
 function initButtons() {
   document.getElementById('nextButton').addEventListener('click', () => {
     nav++;
+    $("span.monthDiv select").val('-');
+    $("span.yearDiv select").val('-');
+    console.log(nav);
     load();
   });
 
   document.getElementById('backButton').addEventListener('click', () => {
     nav--;
+    $("span.monthDiv select").val('-');
+    $("span.yearDiv select").val('-');
     load();
   });
-
+  
+  document.getElementById('dateButton').addEventListener('click', changeDate);
   document.getElementById('saveButton').addEventListener('click', saveEvent);
   document.getElementById('cancelButton').addEventListener('click', closeModal);
   document.getElementById('deleteButton').addEventListener('click', deleteEvent);
