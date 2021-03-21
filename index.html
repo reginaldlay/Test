@@ -26,13 +26,13 @@
 				<span class="monthDiv">
 					<label for="monthSelector">Month:</label>
 					<select name="monthSelector" id="monthSelector">
-						<option disabled value selected></option>
+						<option disabled value="none" selected>-</option>
 					</select>
 				</span>
 				<span class="yearDiv">
 					<text>Year: </text>
 					<select name="yearSelector" id="yearSelector">
-						<option disabled value selected></option>
+						<option disabled value="none" selected>-</option>
 					</select>
 				</span>
 
@@ -59,6 +59,19 @@
 				id="eventDescInput"
 				placeholder="Event Description"
 			></textarea>
+
+			<div id="eventTimeSelector">
+				<div>*(optional)</div>
+				<span>Start: </span>
+				<select id="eventStartTime">
+					<option value="-1" selected>-</option>
+				</select>
+				<span> - </span>
+				<span>End: </span>
+				<select id="eventEndTime">
+					<option value="-1" selected>-</option>
+				</select>
+			</div>
 			<button id="saveButton">Save</button>
 			<button id="cancelButton">Cancel</button>
 		</div>
@@ -66,6 +79,13 @@
 		<div id="deleteEventModal">
 			<h2 id="eventText"></h2>
 			<p id="eventDesc"></p>
+			<div id="eventTime">
+				<span>Start: </span>
+				<span id="eventStart"></span>
+				<span> - </span>
+				<span>End: </span>
+				<span id="eventEnd"></span>
+			</div>
 
 			<button id="deleteButton">Delete</button>
 			<button id="closeButton">Close</button>

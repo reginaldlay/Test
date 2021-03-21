@@ -12,23 +12,12 @@ const monthDropdown = document.getElementById('monthSelector');
 const yearDropdown = document.getElementById('yearSelector');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months =['January', 'February', 'March', 'April', 'May', 'June',  
-               'July', 'August', 'September', 'October', 'November','December']
+               'July', 'August', 'September', 'October', 'November','December'];
+const startTime = document.getElementById('eventStartTime');
+const endTime = document.getElementById('eventEndTime');
 
-function openModal(date) {
-  clicked = date;
-
-  const eventForDay = events.find(e => e.date === clicked);
-
-  if (eventForDay) {
-    document.getElementById('eventText').innerText = eventForDay.title;
-    document.getElementById('eventDesc').innerHTML = eventForDay.desc;
-    deleteEventModal.style.display = 'block';
-  } else {
-    newEventModal.style.display = 'block';
-  }
-
-  backDrop.style.display = 'block';
-}
+populateTime(startTime);
+populateTime(endTime);
 
 function getDateVar(name, useNav){
   const dt = new Date();
@@ -128,7 +117,7 @@ function changeDate(){
   const selMonth = monthDropdown.value;
   const selYear = yearDropdown.value;
 
-  if(selYear !== '' && selMonth !== ''){
+  if(selYear === '0'){
     monthDropdown.classList.remove('error');
     yearDropdown.classList.remove('error');
 
@@ -149,30 +138,98 @@ function changeDate(){
   }
 }
 
+function timeToString(timeVal){
+  var hours, minutes, ampm;
+  hours = Math.floor(timeVal / 60);
+  minutes = timeVal % 60;
+  if (minutes < 10){
+    minutes = '0' + minutes; // adding leading zero
+  }
+  ampm = hours % 24 < 12 ? 'AM' : 'PM';
+  hours = hours % 12;
+  if (hours === 0){
+    hours = 12;
+  }
+  
+  var timeString = hours + ':' + minutes + ' ' + ampm;
+
+  return timeString;
+}
+
+function populateTime(selector) {
+  var select = $(selector);
+  for(var i = 0; i <= 1430; i += 30){
+      select.append($('<option></option>')
+          .attr('value', i)
+          .text(timeToString(i))); 
+  }
+}
+
+function openModal(date) {
+  clicked = date;
+  const emptyTime = '-1:0-1 AM';
+  const eventForDay = events.find(e => e.date === clicked);
+
+  if (eventForDay) {
+    let eventStart = timeToString(parseFloat(eventForDay.start));
+    let eventEnd = timeToString(parseFloat(eventForDay.end));
+
+    if(eventStart === emptyTime){
+      eventStart = 'None';
+      eventEnd = 'None';
+    }
+
+    document.getElementById('eventText').innerText = eventForDay.title;
+    document.getElementById('eventDesc').innerHTML = eventForDay.desc;
+    document.getElementById('eventStart').innerHTML = eventStart;
+    document.getElementById('eventEnd').innerHTML = eventEnd;
+    deleteEventModal.style.display = 'block';
+  } else {
+    newEventModal.style.display = 'block';
+  }
+
+  backDrop.style.display = 'block';
+}
+
 function closeModal() {
   eventTitleInput.classList.remove('error');
+  startTime.classList.remove('error');
+  endTime.classList.remove('error');
   newEventModal.style.display = 'none';
   deleteEventModal.style.display = 'none';
   backDrop.style.display = 'none';
   eventTitleInput.value = '';
   eventDescInput.value = '';
+  startTime.value = '-1';
+  endTime.value = '-1';
   clicked = null;
   load();
 }
 
 function saveEvent() {
   if (eventTitleInput.value) {
-    eventTitleInput.classList.remove('error');
+    if(parseFloat(endTime.value) < parseFloat(startTime.value)){
+      startTime.classList.add('error');
+      endTime.classList.add('error');
+    }
+    else{
+      eventTitleInput.classList.remove('error');
+      startTime.classList.remove('error');
+      endTime.classList.remove('error');
 
-    events.push({
-      date: clicked,
-      title: eventTitleInput.value,
-      desc: eventDescInput.value
-    });
-
-    localStorage.setItem('events', JSON.stringify(events));
-    closeModal();
-  } else {
+      events.push({
+        date: clicked,
+        title: eventTitleInput.value,
+        desc: eventDescInput.value,
+        start: startTime.value,
+        end: endTime.value
+      });
+  
+      localStorage.setItem('events', JSON.stringify(events));
+      closeModal();
+    }
+  } 
+  else {
     eventTitleInput.classList.add('error');
   }
 }
@@ -186,16 +243,16 @@ function deleteEvent() {
 function initButtons() {
   document.getElementById('nextButton').addEventListener('click', () => {
     nav++;
-    $("span.monthDiv select").val('-');
-    $("span.yearDiv select").val('-');
+    monthDropdown.value='none';
+    yearDropdown.value='none';
     console.log(nav);
     load();
   });
 
   document.getElementById('backButton').addEventListener('click', () => {
     nav--;
-    $("span.monthDiv select").val('-');
-    $("span.yearDiv select").val('-');
+    monthDropdown.value='none';
+    yearDropdown.value='none';
     load();
   });
   

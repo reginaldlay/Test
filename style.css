@@ -30,7 +30,7 @@ textarea {
 	width: 100%;
 	padding: 10px;
 	height: 200px;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 	border-radius: 3px;
 	outline: none;
 	border: none;
@@ -146,6 +146,23 @@ textarea {
 	font-size: 15px;
 }
 
+#eventTime {
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+
+#eventTimeSelector {
+	margin-bottom: 25px;
+}
+
+#eventTimeSelector span {
+	font-size: 15px;
+}
+
+#eventTimeSelector div {
+	font-size: 10px;
+}
+
 #modalBackDrop {
 	display: none;
 	top: 0px;
@@ -154,4 +171,8 @@ textarea {
 	width: 100vw;
 	height: 100vh;
 	position: absolute;
+}
+
+.hidden {
+	opacity: 0;
 }
