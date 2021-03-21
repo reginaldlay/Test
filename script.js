@@ -16,9 +16,6 @@ const months =['January', 'February', 'March', 'April', 'May', 'June',
 const startTime = document.getElementById('eventStartTime');
 const endTime = document.getElementById('eventEndTime');
 
-populateTime(startTime);
-populateTime(endTime);
-
 function getDateVar(name, useNav){
   const dt = new Date();
 
@@ -58,7 +55,7 @@ function load() {
   const currYear = `${year}`;
 
   if(loadedSelectors === false){
-    loadSelectors(currMonth, currYear);
+    loadSelectors(currYear);
   }
 
   calendar.innerHTML = '';
@@ -93,7 +90,7 @@ function load() {
   }
 }
 
-function loadSelectors(currMonth, currYear){
+function loadSelectors(currYear){
   loadedSelectors = true;
   var monthValue = 0;
   months.forEach(m =>{
@@ -263,5 +260,7 @@ function initButtons() {
   document.getElementById('closeButton').addEventListener('click', closeModal);
 }
 
+populateTime(startTime);
+populateTime(endTime);
 initButtons();
 load();

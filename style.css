@@ -18,6 +18,8 @@ button {
 
 select {
 	border: none;
+	outline: none;
+	scroll-behavior: smooth;
 }
 
 select.error {
