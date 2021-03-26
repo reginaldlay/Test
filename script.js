@@ -114,7 +114,7 @@ function changeDate(){
   const selMonth = monthDropdown.value;
   const selYear = yearDropdown.value;
 
-  if(selYear === '0'){
+  if(selYear !== '0'){
     monthDropdown.classList.remove('error');
     yearDropdown.classList.remove('error');
 
