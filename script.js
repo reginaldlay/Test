@@ -16,6 +16,33 @@ const months =['January', 'February', 'March', 'April', 'May', 'June',
 const startTime = document.getElementById('eventStartTime');
 const endTime = document.getElementById('eventEndTime');
 
+function startClock() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+  var t = setTimeout(startClock, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
+function loadHeader(){
+  const calendarLogo = document.getElementById('calendarLink');
+  const notesLogo = document.getElementById('notesLink');
+
+  if(window.location.href.includes("index.html")){
+    notesLogo.classList.remove('currPage');
+    calendarLogo.classList.add('currPage');
+    console.log("big gay");
+  }
+}
+
 function getDateVar(name, useNav){
   const dt = new Date();
 
@@ -260,7 +287,9 @@ function initButtons() {
   document.getElementById('closeButton').addEventListener('click', closeModal);
 }
 
+
 populateTime(startTime);
 populateTime(endTime);
 initButtons();
 load();
+startClock();

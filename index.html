@@ -12,27 +12,21 @@
 		/>
 		<link rel="stylesheet" href="styles/style.css" />
 		<link id="theme" rel="stylesheet" href="themes/light.css" />
-		<link rel="stylesheet" href="styles/header-3.css">
+		
 	</head>
-	<body >
-		<header class="site-header">
-			<div class="wrapper site-header__wrapper">
-			  <a href="#" class="brand">Brand</a>
-			  <nav class="nav">
-				<button class="nav__toggle" aria-expanded="false" type="button">
-				  menu
-				</button>
-				<ul class="nav__wrapper">
-				  <li class="nav__item"><a href="#">Home</a></li>
-				  <li class="nav__item"><a href="#">About</a></li>
-				  <li class="nav__item"><a href="#">Services</a></li>
-				  <li class="nav__item"><a href="#">Hire us</a></li>
-				  <li class="nav__item"><a href="#">Contact</a></li>
-				</ul>
-			  </nav>
-			</div>
-		  </header>
+	<body>
 		<div id="container">
+			<header class="site-header">
+				<a href="index.html">
+					<div id="tdlLogo"></div>
+				</a>
+				<a href="index.html">
+					<div id="calendarLink"></div>
+				</a>
+				<a href="notes.html">
+					<div id="notesLink"></div>
+				</a>
+			</header>
 			<div id="header">
 				<div id="monthDisplay"></div>
 				<div>
@@ -40,6 +34,8 @@
 					<button id="nextButton">></button>
 				</div>
 			</div>
+			<div id="time"></div>
+
 			<div id="navigation">
 				<span class="monthDiv">
 					<label for="monthSelector">Month:</label>
@@ -53,7 +49,7 @@
 						<option disabled value="none" selected>-</option>
 					</select>
 				</span>
-
+	
 				<button id="dateButton">Go</button>
 			</div>
 			<div id="weekdays">
@@ -65,19 +61,25 @@
 				<div>FRI</div>
 				<div>SAT</div>
 			</div>
-
+	
 			<div id="calendar"></div>
+			<div>
+				<label class="switch">
+					<input type="checkbox" checked>
+					<span class="slider"></span>
+				</label>
+			</div>
 		</div>
-
+	
 		<div id="newEventModal">
 			<h2>New Event</h2>
-
+	
 			<input id="eventTitleInput" placeholder="Event Title" />
 			<textarea
 				id="eventDescInput"
 				placeholder="Event Description"
 			></textarea>
-
+	
 			<div id="eventTimeSelector">
 				<div>*(optional)</div>
 				<span>Start: </span>
@@ -93,7 +95,7 @@
 			<button id="saveButton">Save</button>
 			<button id="cancelButton">Cancel</button>
 		</div>
-
+	
 		<div id="deleteEventModal">
 			<h2 id="eventText"></h2>
 			<p id="eventDesc"></p>
@@ -104,12 +106,15 @@
 				<span>End: </span>
 				<span id="eventEnd"></span>
 			</div>
-
+	
 			<button id="deleteButton">Delete</button>
 			<button id="closeButton">Close</button>
 		</div>
-
+	
 		<div id="modalBackDrop"></div>
+
+		
+		
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="script.js"></script>
