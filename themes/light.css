@@ -25,13 +25,99 @@ body {
   border: none !important;
 }
 
+#tdlLogo {
+  width: 60px;
+  height: 60px;
+  background: url("../logos/TDLlight.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.2s ease-in-out;
+}
+
+#calendarLink {
+  width: 60px;
+  height: 60px;
+  background: url("../logos/calPng.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.2s ease-in-out;
+}
+
+#calendarLink:hover {
+  background: url("../logos/calHoverPng.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#notesLink {
+  width: 60px;
+  height: 60px;
+  background: url("../logos/notesPng.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.2s ease-in-out;
+}
+
+#notesLink:hover {
+  background: url("../logos/notesHoverPng.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#stopwatchLink {
+  width: 60px;
+  height: 60px;
+  background: url("../logos/stopPng.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.2s ease-in-out;
+}
+
+#stopwatchLink:hover {
+  background: url("../logos/stopHoverPng.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#timerLink {
+  width: 60px;
+  height: 60px;
+  background: url("../logos/timerPng.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.2s ease-in-out;
+}
+
+#timerLink:hover {
+  background: url("../logos/timerHoverPng.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 button,
 .event {
   color: #fffcff;
 }
 
-#header {
+#header,
+a,
+#userOut {
   color: #35455d;
+  transition: 0.2s ease-in-out;
+}
+
+#userIn > a:hover,
+#userOut:hover {
+  color: #5d7daf;
 }
 
 #header button,

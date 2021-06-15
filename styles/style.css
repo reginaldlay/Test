@@ -48,52 +48,26 @@ textarea {
   border: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+#userSession {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#userIn > a {
+  margin-right: 1rem;
+}
+
+#userOut {
+  display: none;
+}
+
 #time {
   margin-left: 0.5rem;
-}
-
-#tdlLogo {
-  width: 60px;
-  height: 60px;
-  background: url("../logos/TDLlight.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: 0.2s ease-in-out;
-}
-
-#calendarLink {
-  width: 60px;
-  height: 60px;
-  background: url("../logos/calPng.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: 0.2s ease-in-out;
-}
-
-#calendarLink:hover {
-  background: url("../logos/calHoverPng.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#notesLink {
-  width: 60px;
-  height: 60px;
-  background: url("../logos/notesPng.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: 0.2s ease-in-out;
-}
-
-#notesLink:hover {
-  background: url("../logos/notesHoverPng.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 #header button {
@@ -263,7 +237,7 @@ textarea {
   left: 0;
   right: -3.5px;
   bottom: 0;
-  background-color: #35455d;
+  background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 17px;
@@ -276,24 +250,19 @@ textarea {
   width: 13px;
   left: 2px;
   bottom: 2px;
-  background-color: white;
+  background-color: #35455d;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 50px;
 }
 
 input:checked + .slider {
-  background-color: #ccc;
+  background-color: #35455d;
 }
-/*
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-} */
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-  background-color: #35455d;
+  background-color: white;
 }
-

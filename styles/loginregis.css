@@ -1,0 +1,67 @@
+body {
+  background-image: url("../logos/backgroundTiles.png") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+}
+
+#sessionContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+  padding: 3rem;
+  background-color: white;
+  border-radius: 30px;
+  filter: drop-shadow(0rem 0rem 3rem rgba(0, 0, 0, 0.438));
+}
+
+#sessionContainer > span,
+#sessionContainer > input {
+  margin-bottom: 1rem;
+}
+
+#sessionContainer > label {
+  font-size: 10px;
+  color: rgb(109, 109, 109);
+}
+
+#sessionContainer .subhead {
+  text-align: center;
+  font-size: 30px;
+}
+
+.smallText {
+  font-size: 15px;
+}
+
+a {
+  color: #2357a5;
+  transition: 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #4084eb;
+}
+
+#signinBtn {
+  align-self: center;
+  width: 300px;
+  height: 50px;
+}
+
+#nameIn:focus,
+#passIn:focus {
+  outline: none;
+}
+
+#signinBtn {
+  transition: 0.2s ease-in-out;
+  background-color: #35455d;
+  color: white;
+}
+
+#signinBtn:hover {
+  border: 2px solid #35455d;
+  background-color: white;
+  color: #35455d;
+}
