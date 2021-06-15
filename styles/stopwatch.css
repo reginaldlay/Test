@@ -1,0 +1,27 @@
+
+  .SWbuttons.swbtn {
+    width: 100px;
+    height: 30px;
+    border: 0px;
+    border-radius: 50px;
+    background: #35455d;
+    color: white;
+    cursor: pointer;
+    
+}
+
+#stopwatch {
+    font-size: 100px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    color: #35455d;
+}
+
+.SWbuttons{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-51.6%, -45%);
+}
