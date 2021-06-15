@@ -1,70 +1,84 @@
+.fadein {
+  opacity: 0;
+  -moz-transition: opacity 1.5s;
+  -webkit-transition: opacity 1.5s;
+  -o-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+}
+
+body.loaded .fadein {
+  opacity: 1;
+}
+
 body,
 .padding {
-	background-color: white !important;
-	border: none !important;
+  background-color: white !important;
+  border: none !important;
 }
 
 button,
 .event {
-	color: #fffcff;
+  color: #fffcff;
 }
 
 #header {
-	color: #35455d;
+  color: #35455d;
 }
 
 #header button,
 #dateButton {
-	color: #35455d;
-	background-color: white;
+  color: #35455d;
+  background-color: white;
+  transition: 0.2s ease-in-out;
 }
 
 #header button:hover,
 #dateButton:hover {
-	color: white;
-	background-color: #35455d;
+  color: white;
+  background-color: #35455d;
 }
 
 #weekdays {
-	color: #247ba0;
+  color: #247ba0;
 }
 
 .event {
-	background-color: #ff5151;
+  background-color: #ff5151;
 }
 
 .day {
-	border-color: rgb(224, 224, 224);
+  border-color: rgb(224, 224, 224);
+  transition: 0.3s ease-in-out;
 }
 
 .day:hover {
-	background-color: #e8f4fa !important;
-	color: black !important;
+  background-color: #e8f4fa !important;
+  color: black !important;
 }
 
 #newEventModal,
 #deleteEventModal,
 .day + #currentDay {
-	background-color: #35455d;
-	color: white;
+  background-color: #35455d;
+  color: white;
 }
 
 #eventTitleInput.error,
 select.error {
-	border-color: red;
+  border-color: red;
 }
 
 #cancelButton,
 #deleteButton {
-	background-color: #d36c6c;
+  background-color: #d36c6c;
 }
 
 #saveButton,
 #closeButton {
-	background-color: white;
-	color: #35455d;
+  background-color: white;
+  color: #35455d;
 }
 
 #modalBackDrop {
-	background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
