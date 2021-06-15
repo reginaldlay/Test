@@ -10,7 +10,16 @@ body.loaded .fadein {
   opacity: 1;
 }
 
-body,
+body {
+  background-image: url("../logos/background.png") !important;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none !important;
+}
+
 .padding {
   background-color: white !important;
   border: none !important;
@@ -48,6 +57,7 @@ button,
 
 .day {
   border-color: rgb(224, 224, 224);
+  background-color: white;
   transition: 0.3s ease-in-out;
 }
 
