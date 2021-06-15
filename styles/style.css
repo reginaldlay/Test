@@ -1,0 +1,183 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  justify-content: center;
+}
+
+button {
+  width: 75px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+select {
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+select.error {
+  border: 2px solid;
+}
+
+textarea {
+  resize: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+}
+
+#header button {
+  width: 40px;
+  height: 100%;
+  font-size: 20px;
+  border-radius: 40px;
+}
+
+#header {
+  padding: 10px;
+  font-size: 26px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#container {
+  width: 770px;
+}
+
+#navigation {
+  padding: 10px;
+  font-size: 15px;
+  display: flex;
+}
+
+#navigation span {
+  margin-right: 2rem;
+  margin-top: 5px;
+}
+
+#dateButton {
+  font-size: 15px;
+  margin-top: none !important;
+}
+
+#weekdays {
+  width: 100%;
+  display: flex;
+}
+
+#weekdays div {
+  width: 100px;
+  padding: 10px;
+}
+
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  width: 100px;
+  padding: 10px;
+  height: 90px;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event {
+  font-size: 10px;
+  padding: 3px;
+  border-radius: 75px;
+  width: 70px;
+  max-height: 55px;
+  overflow: hidden;
+}
+
+.padding {
+  cursor: default !important;
+  box-shadow: none !important;
+}
+
+#newEventModal,
+#deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+}
+
+#eventTitleInput.error {
+  border: 2px solid;
+}
+
+#eventDesc {
+  font-size: 15px;
+}
+
+#eventTime {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+#eventTimeSelector {
+  margin-bottom: 25px;
+}
+
+#eventTimeSelector span {
+  font-size: 15px;
+}
+
+#eventTimeSelector div {
+  font-size: 10px;
+}
+
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#topheader {
+  justify-content: center;
+}
