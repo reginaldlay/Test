@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority List</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+			rel="stylesheet"
+		/>
+     <link rel="stylesheet" href="/styles/priority.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+    <link id="theme" rel="stylesheet" href="themes/light.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <header class="site-header">
+            <a href="index.html">
+                <div id="tdlLogo"></div>
+            </a>
+            <a href="index.html">
+                <div id="calendarLink"></div>
+            </a>
+            <a href="notes.html">
+                <div id="notesLink"></div>
+            </a>
+        </header>
+
+        <div id="time"></div>    
+    </div>
+
+    <div class="priorityList">
+        <input type="text" class="txtb" placeholder="Add a task">
+        <select name="Priority" class="priorityLevel">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <div class="notcomp">
+          <h3>Not Completed</h3>
+            <div class="HighPrio">
+                <h4>High Priority</h4>
+
+            </div>
+            
+            <div class="MedPrio">
+                <h4>Medium Priority</h4>
+
+            </div>
+
+            <div class="LowPrio">
+                <h4>Low Priority</h4>
+
+            </div>
+  
+        </div>
+  
+        <div class="comp">
+          <h3>Completed</h3>
+        </div>
+    </div>
+
+    <script src="scriptprio.js"></script>
+</body>
+</html>
