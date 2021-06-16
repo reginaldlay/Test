@@ -120,15 +120,21 @@ a,
   color: #5d7daf;
 }
 
+.priorityLevel {
+  border-color: #35455d;
+}
+
 #header button,
-#dateButton {
+#dateButton,
+.priorityLevel {
   color: #35455d;
   background-color: white;
   transition: 0.2s ease-in-out;
 }
 
 #header button:hover,
-#dateButton:hover {
+#dateButton:hover,
+.priorityLevel:hover {
   color: white;
   background-color: #35455d;
 }
@@ -142,7 +148,7 @@ a,
 }
 
 .day {
-  border-color: rgb(224, 224, 224);
+  border-color: rgb(225, 239, 255);
   background-color: white;
   transition: 0.3s ease-in-out;
 }
@@ -176,6 +182,31 @@ select.error {
 }
 
 #modalBackDrop {
-  position: fixed;
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.comp .task {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.HighPrio > .task {
+  background-color: #35455d;
+  color: white;
+}
+
+.MedPrio > .task {
+  background-color: #426ba8;
+  color: white;
+}
+
+.LowPrio > .task {
+  background-color: #3f82e7;
+  color: white;
+}
+
+.comp > .task {
+  background-color: #ffffff;
+  border-color: #35455d;
+  color: #35455d;
 }

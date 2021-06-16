@@ -39,6 +39,7 @@ function startClock() {
       task.append(del,check);
 
       var ddl = ($(".priorityLevel").val());
+      console.log(ddl);
       switch (ddl){
         case "High" :
           $(".HighPrio").append(task); break;

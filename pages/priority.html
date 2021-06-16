@@ -10,6 +10,7 @@
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
 			rel="stylesheet"
 		/>
+     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="../styles/priority.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
     <link id="theme" rel="stylesheet" href="../themes/light.css" />
@@ -17,6 +18,16 @@
 </head>
 <body>
     <div id="container">
+        <div id="userSession">
+            <div id="userIn">
+                <a href="pages/login.html">Login</a>
+                <a href="pages/register.html">Register</a>
+            </div>
+            <div id="userOut">
+                Logout
+            </div>
+        </div>
+        
         <header class="site-header">
             <a href="../index.html">
                 <div id="tdlLogo"></div>
@@ -24,44 +35,41 @@
             <a href="../index.html">
                 <div id="calendarLink"></div>
             </a>
-            <a href="/pages/priority.html">
+            <a href="priority.html">
                 <div id="notesLink"></div>
+            </a>
+            <a href="stopwatch.html">
+                <div id="stopwatchLink"></div>
+            </a>
+            <a href="timer.html">
+                <div id="timerLink"></div>
             </a>
         </header>
 
         <div id="time"></div>    
-    </div>
 
-    <div class="priorityList">
-        <input type="text" class="txtb" placeholder="Add a task">
-        <select name="Priority" class="priorityLevel">
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-        </select>
-        <div class="notcomp">
-          <h3>Not Completed</h3>
-            <div class="HighPrio">
-                <h4>High Priority</h4>
-
+        <div class="priorityList">
+            <div id="inputField">
+                <input type="text" class="txtb" placeholder="Add a task">
+                <select name="Priority" class="priorityLevel">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
             </div>
-            
-            <div class="MedPrio">
-                <h4>Medium Priority</h4>
-
+            <div class="subheadTasks">Tasks</span>
+            <div class="notcomp">
+                <div class="HighPrio"></div>
+                <div class="MedPrio"></div>
+                <div class="LowPrio"></div> 
             </div>
 
-            <div class="LowPrio">
-                <h4>Low Priority</h4>
-
-            </div>
-  
-        </div>
-  
-        <div class="comp">
-          <h3>Completed</h3>
+            <span class="subheadTasks">Completed</span>
+            <div class="comp"></div>
         </div>
     </div>
+
+    
 
     <script src="../src/scriptprio.js"></script>
 </body>
