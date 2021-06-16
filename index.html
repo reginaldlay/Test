@@ -1,143 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Calendar</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
 
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="styles/style.css" />
-		<link id="theme" rel="stylesheet" href="themes/light.css" />
-		
-	</head>
-	<body>
-		<div id="container">
-			<div id="userSession">
-				<div id="userIn">
-					<a href="pages/login.html">Login</a>
-					<a href="pages/register.html">Register</a>
-				</div>
-				<div id="userOut">
-					Logout
-				</div>
-			</div>
-			
-			<header class="site-header">
-				<a href="index.html">
-					<div id="tdlLogo"></div>
-				</a>
-				<a href="index.html">
-					<div id="calendarLink"></div>
-				</a>
-				<a href="pages/priority.html">
-					<div id="notesLink"></div>
-				</a>
-				<a href="pages/stopwatch.html">
-					<div id="stopwatchLink"></div>
-				</a>
-				<a href="pages/timer.html">
-					<div id="timerLink"></div>
-				</a>
-			</header>
-			<div id="header">
-				<div id="monthDisplay"></div>
-				<div>
-					<button id="backButton"><</button>
-					<button id="nextButton">></button>
-				</div>
-			</div>
-			<div id="time"></div>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link id="theme" rel="stylesheet" href="themes/light.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="userSession">
+        <div id="userIn">
+          <a href="pages/login.html">Login</a>
+          <a href="pages/register.html">Register</a>
+        </div>
+        <div id="userOut">Logout</div>
+      </div>
 
-			<div id="navigation">
-				<span class="monthDiv">
-					<label for="monthSelector">Month:</label>
-					<select name="monthSelector" id="monthSelector">
-						<option disabled value="none" selected>-</option>
-					</select>
-				</span>
-				<span class="yearDiv">
-					<text>Year: </text>
-					<select name="yearSelector" id="yearSelector">
-						<option disabled value="none" selected>-</option>
-					</select>
-				</span>
-	
-				<button id="dateButton">Go</button>
-			</div>
-			<div id="weekdays">
-				<div>SUN</div>
-				<div>MON</div>
-				<div>TUE</div>
-				<div>WED</div>
-				<div>THU</div>
-				<div>FRI</div>
-				<div>SAT</div>
-			</div>
-	
-			<div id="calendar"></div>
-			<div id="sourceLink">
-                <span>View the source code</span> 
-                <a href="https://github.com/utopeeuh/to-do-list" target="_blank">
-                here!
-                </a>
-            </div>
-			<div id="themeSwitcher">
-				<div>Bit too bright?</div>
-				<label class="switch">
-					<input type="checkbox" checked>
-					<span class="slider"></span>
-				</label>
-			</div>
-		</div>
-	
-		<div id="newEventModal">
-			<h2>New Event</h2>
-	
-			<input id="eventTitleInput" placeholder="Event Title" />
-			<textarea
-				id="eventDescInput"
-				placeholder="Event Description"
-			></textarea>
-	
-			<div id="eventTimeSelector">
-				<div>*(optional)</div>
-				<span>Start: </span>
-				<select id="eventStartTime">
-					<option value="-1" selected>-</option>
-				</select>
-				<span> - </span>
-				<span>End: </span>
-				<select id="eventEndTime">
-					<option value="-1" selected>-</option>
-				</select>
-			</div>
-			<button id="saveButton">Save</button>
-			<button id="cancelButton">Cancel</button>
-		</div>
-	
-		<div id="deleteEventModal">
-			<h2 id="eventText"></h2>
-			<p id="eventDesc"></p>
-			<div id="eventTime">
-				<span>Start: </span>
-				<span id="eventStart"></span>
-				<span> - </span>
-				<span>End: </span>
-				<span id="eventEnd"></span>
-			</div>
-	
-			<button id="deleteButton">Delete</button>
-			<button id="closeButton">Close</button>
-		</div>
-	
-		<div id="modalBackDrop"></div>
+      <header class="site-header">
+        <a href="index.html">
+          <div id="tdlLogo"></div>
+        </a>
+        <a href="index.html">
+          <div id="calendarLink"></div>
+        </a>
+        <a href="pages/priority.html">
+          <div id="notesLink"></div>
+        </a>
+        <a href="pages/stopwatch.html">
+          <div id="stopwatchLink"></div>
+        </a>
+        <a href="pages/timer.html">
+          <div id="timerLink"></div>
+        </a>
+      </header>
+      <div id="header">
+        <div id="monthDisplay"></div>
+        <div>
+          <button id="backButton"><</button>
+          <button id="nextButton">></button>
+        </div>
+      </div>
+      <div id="time"></div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="src/calendar.js"></script>
-		<script src="src/clock.js"></script>
-	</body>
+      <div id="navigation">
+        <span class="monthDiv">
+          <label for="monthSelector">Month:</label>
+          <select name="monthSelector" id="monthSelector">
+            <option disabled value="none" selected>-</option>
+          </select>
+        </span>
+        <span class="yearDiv">
+          <text>Year: </text>
+          <select name="yearSelector" id="yearSelector">
+            <option disabled value="none" selected>-</option>
+          </select>
+        </span>
+
+        <button id="dateButton">Go</button>
+      </div>
+      <div id="weekdays">
+        <div>SUN</div>
+        <div>MON</div>
+        <div>TUE</div>
+        <div>WED</div>
+        <div>THU</div>
+        <div>FRI</div>
+        <div>SAT</div>
+      </div>
+
+      <div id="calendar"></div>
+      <div id="sourceLink">
+        <span>View the source code</span>
+        <a href="https://github.com/utopeeuh/to-do-list" target="_blank">
+          here!
+        </a>
+      </div>
+      <div id="themeSwitcher">
+        <div>Bit too bright?</div>
+        <label class="switch">
+          <input type="checkbox" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div id="newEventModal">
+      <h2>New Event</h2>
+
+      <input id="eventTitleInput" placeholder="Event Title" />
+      <textarea id="eventDescInput" placeholder="Event Description"></textarea>
+
+      <div id="eventTimeSelector">
+        <div>*(optional)</div>
+        <span>Start: </span>
+        <select id="eventStartTime">
+          <option value="-1" selected>-</option>
+        </select>
+        <span> - </span>
+        <span>End: </span>
+        <select id="eventEndTime">
+          <option value="-1" selected>-</option>
+        </select>
+      </div>
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2 id="eventText"></h2>
+      <p id="eventDesc"></p>
+      <div id="eventTime">
+        <span>Start: </span>
+        <span id="eventStart"></span>
+        <span> - </span>
+        <span>End: </span>
+        <span id="eventEnd"></span>
+      </div>
+
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="src/calendar.js"></script>
+    <script src="src/clock.js"></script>
+  </body>
 </html>
