@@ -1,22 +1,14 @@
-* {
-  background-color: #35455d;
-}
-
 body {
-  background-image: url("../backgrounds/background.png") !important;
+  background-image: url("../backgrounds/backgroundTiles.png") !important;
 
   height: 100%;
   width: 100%;
   background-attachment: fixed;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border: none !important;
   border-color: #fffcfc;
-}
-
-.padding {
-  background-color: #fafafa !important;
-  border: none !important;
 }
 
 #tdlLogo {
@@ -98,8 +90,7 @@ body {
   background-repeat: no-repeat;
 }
 
-button,
-.event {
+button {
   color: #35455d;
 }
 
@@ -110,9 +101,14 @@ a,
   transition: 0.2s ease-in-out;
 }
 
+#userIn > a {
+  color: #cecece;
+}
+
 #userIn > a:hover,
-#userOut:hover {
-  color: #000000;
+#userOut:hover,
+.event {
+  color: #ffffff;
 }
 
 .priorityLevel,
@@ -125,7 +121,7 @@ a,
 .priorityLevel,
 #resetBtn:hover {
   color: #ffffff;
-  background-color: #35455d;
+  background-color: #35455d00;
   transition: 0.2s ease-in-out;
 }
 
@@ -142,25 +138,43 @@ a,
 }
 
 .event {
-  background-color: #ff5151;
+  background-color: #35455d;
+  color: #fcfdff;
+  border: 1px solid #fcfdff;
 }
 
 .day {
-  border-color: #fcfdff;
-  background-color: #35455d;
+  border-color: #fcfdff8a;
+  color: #fcfdff;
   transition: 0.3s ease-in-out;
 }
 
 .day:hover {
-  background-color: #33373b !important;
-  color: rgb(253, 253, 253) !important;
+  background-color: #fcfdff;
+  color: #35455d;
 }
 
 #newEventModal,
-#deleteEventModal,
-.day + #currentDay {
-  background-color: #eeeeee;
+#deleteEventModal {
+  background-color: #fcfdff;
   color: #35455d;
+}
+
+.padding {
+  background-color: #ffffff46 !important;
+  color: #35455d !important;
+}
+
+.day + #currentDay {
+  background-color: #ff5151;
+  color: #fcfdff;
+  border-color: #d83a3a;
+}
+
+.day + #currentDay:hover {
+  background-color: #fcfdff;
+  color: #35455d;
+  border-color: #fcfdff;
 }
 
 #eventTitleInput.error,
@@ -180,7 +194,7 @@ select.error {
 }
 
 #modalBackDrop {
-  background-color: rgba(240, 240, 240, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .comp .task {
@@ -200,25 +214,27 @@ select.error {
 
 .LowPrio > .task {
   background-color: #ffffff;
-  color: 3f82e7;
+  color: #3f82e7;
 }
 
 .comp > .task {
   background-color: #35455d;
   border-color: #fcfcfc;
-  color: #ffffff;
+  color: #fcfdff;
 }
 
 #sourceLink > a {
-  color: #6ca7ff;
+  color: #ff2626;
 }
 
 #sourceLink > a:hover {
-  color: #2357a5;
+  color: #ff5151;
 }
 
 #stopwatch,
 #timerContainer > span,
-#timerContainer > input {
-  color: #ffffff;
+#timerContainer > input,
+#time,
+#sourceLink {
+  color: #fcfdff;
 }
