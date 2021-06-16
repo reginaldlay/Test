@@ -9,7 +9,7 @@ var startTimer = null;
 var hasStarted = false;
 
 start.addEventListener("click", function () {
-    if(!hasStarted && (hour.value == 0 && min.value == 0 && sec.value == 0)){
+    if(!hasStarted){
       startInterval();
       hasStarted = true;
     }
