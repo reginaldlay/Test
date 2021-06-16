@@ -209,3 +209,9 @@ select.error {
 #sourceLink > a:hover {
   color: #6ca7ff;
 }
+
+#stopwatch,
+#timerContainer > span,
+#timerContainer > input {
+  color: #35455d;
+}

@@ -15,7 +15,7 @@
     <title>Timer</title>
   </head>
   <body>
-       <div id="container">
+    <div id="container">
         <div id="userSession">
             <div id="userIn">
                 <a href="login.html">Login</a>
@@ -26,45 +26,42 @@
             </div>
         </div>
 
-    <header class="site-header">
-      <a href="../index.html">
-        <div id="tdlLogo"></div>
-      </a>
-      <a href="../index.html">
-        <div id="calendarLink"></div>
-      </a>
-      <a href="priority.html">
-        <div id="notesLink"></div>
-      </a>
-      <a href="stopwatch.html">
-        <div id="stopwatchLink"></div>
-      </a>
-      <a href="timer.html">
-        <div id="timerLink"></div>
-      </a>
-    </header>
+      <header class="site-header">
+        <a href="../index.html">
+          <div id="tdlLogo"></div>
+        </a>
+        <a href="../index.html">
+          <div id="calendarLink"></div>
+        </a>
+        <a href="priority.html">
+          <div id="notesLink"></div>
+        </a>
+        <a href="stopwatch.html">
+          <div id="stopwatchLink"></div>
+        </a>
+        <a href="timer.html">
+          <div id="timerLink"></div>
+        </a>
+      </header>
 
-    <section>
-        <h1>Countdown Timer</h1>
-    <div id="container1">
-      <input id="hour" type="number" max="99" min="0" value="0" class="time" />
-      <p id="p1" class="semicolon">h</p>
-      <input
-        id="minute"
-        type="number"
-        max="60"
-        min="0"
-        value="0"
-        class="time"
-      />
-      <p id="p2" class="semicolon">m</p>
-      <input id="sec" type="number" max="60" min="0" value="0" class="time" />
-      <button id="start" class="btn">Start</button>
-      <button id="reset" class="btn">Reset</button>
-      <p id="p2" class="semicolon">m</p>
-    </div>  
-    </section>
-    
+      <div id="time"></div>
+
+      <div id="timerContainer">
+        <input id="hour" type="number" max="99" min="0" value="0"/>
+        <span>h</span>
+        <input id="minute" type="number" max="60" in="0" value="0" />
+        <span>m</span>
+        <input id="sec" type="number" max="60" min="0" value="0"/>
+        <span>s</span>
+      </div>
+
+      <div id="timerButtons">
+        <button id="startBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </div> 
+  
     <script src="../src/timerFunction.js"></script>
+    <script src="../src/clock.js"></script>
   </body>
 </html>

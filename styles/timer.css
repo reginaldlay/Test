@@ -1,103 +1,48 @@
-* {
-  font-family: "Poppins", sans-serif;
+#timerContainer {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 
-h1 {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-}
-
-#container1 {
-  height: 200px;
-  width: 700px;
-
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-
-/*label*/
-.label {
-  margin: 0;
-
-  justify-self: center;
-  align-self: center;
-  font-size: 30px;
-}
-
-#hour-label {
-  grid-area: 1 / 2 / 1 / 3;
-}
-
-#min-label {
-  grid-area: 1 / 3 / 1 / 4;
-}
-
-#sec-label {
-  grid-area: 1 / 4 / 1 / 5;
-}
-
-/*times*/
-.time {
-  justify-self: center;
-  align-self: center;
-
+#timerContainer > input {
+  outline: none;
   border: none;
-  background-color: #ffffff00;
-  font-size: 50px;
-  width: 80px;
-  height: 60px;
+  width: 143px;
+  font-size: 100px;
 }
 
-#hour {
-  grid-area: 2 / 2 / 2 / 3;
+#timerContainer > span {
+  font-size: 40px;
+  margin-right: 1rem;
 }
 
-.semicolon {
-  justify-self: center;
-  align-self: center;
-
-  font-size: 30px;
-  margin: 0;
-}
-#p1 {
-  grid-area: 2 / 2 / 2 / 4;
+#timerButtons {
+  margin: auto auto;
 }
 
-#minute {
-  grid-area: 2 / 3 / 2 / 4;
+#timerButtons > button {
+  align-items: center;
+  border: 2px solid;
+  transition: 0.2s ease-in-out;
 }
 
-#p2 {
-  grid-area: 2 / 3 / 2 / 5;
+#startBtn {
+  background-color: rgb(21, 185, 76);
 }
 
-#sec {
-  grid-area: 2 / 4 / 2 / 5;
+#resetBtn {
+  background-color: rgb(214, 40, 40) !important;
 }
 
-/*buttons*/
-
-.btn {
-  align-self: center;
-  color: #35455d;
-  width: 100px;
-  height: 40px;
-  font-size: 20px;
-  justify-self: center;
+#startBtn:hover {
+  border-color: rgb(21, 185, 76);
+  background-color: white;
+  color: rgb(21, 185, 76);
 }
 
-#start {
-  grid-area: 3 / 2 / 3 / 4;
-  display: flex;
-  justify-content: center;
-}
-
-#reset {
-  grid-area: 3 / 3 / 3 / 5;
-  justify-content: center;
-  display: flex;
+#resetBtn:hover {
+  border-color: rgb(214, 40, 40) !important;
+  background-color: white !important;
+  color: rgb(214, 40, 40) !important;
 }
