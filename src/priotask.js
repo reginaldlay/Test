@@ -1,20 +1,3 @@
-
-function startClock() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-    var t = setTimeout(startClock, 1000);
-  }
-
-  function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-  }
-
   $(".txtb").on("keyup",function(e){
     //13  means enter button
     if(e.keyCode == 13 && $(".txtb").val() != "")
@@ -54,5 +37,3 @@ function startClock() {
       $(".txtb").val("");
     }
   });
-
-  startClock();
