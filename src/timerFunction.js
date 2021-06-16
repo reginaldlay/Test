@@ -9,10 +9,10 @@ var startTimer = null;
 var hasStarted = false;
 
 start.addEventListener("click", function () {
-    if(!hasStarted){
-      startInterval();
-      hasStarted = true;
-    }
+  if (!hasStarted) {
+    startInterval();
+    hasStarted = true;
+  }
 });
 
 reset.addEventListener("click", function () {
@@ -48,23 +48,23 @@ function timer() {
     hour.value = 0;
     min.value = 0;
     sec.value = 0;
-    //MAININ ALARM DISINI
-  } 
-  
-  else if (sec.value != 0) {
+    sound();
+    stopInterval();
+  } else if (sec.value != 0) {
     sec.value--;
-  } 
-  
-  else if (min.value != 0 && sec.value == 0) {
+  } else if (min.value != 0 && sec.value == 0) {
     sec.value = 59;
     min.value--;
-  } 
-  
-  else if (hour.value != 0 && min.value == 0) {
+  } else if (hour.value != 0 && min.value == 0) {
     min.value = 60;
     hour.value--;
   }
   return;
+}
+
+function sound() {
+  var snd = new Audio("timer sound effect.mp3");
+  snd.play();
 }
 
 function stopInterval() {
