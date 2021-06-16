@@ -213,3 +213,11 @@ select.error {
   border-color: #35455d;
   color: #35455d;
 }
+
+#sourceLink > a {
+  color: #2357a5;
+}
+
+#sourceLink > a:hover {
+  color: #6ca7ff;
+}

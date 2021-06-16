@@ -295,3 +295,13 @@ input:checked + .slider:before {
   color: #35455d;
   font-size: 13px;
 }
+
+#sourceLink {
+  margin-left: 0.75rem;
+  font-size: 12px;
+  font-style: italic;
+}
+
+#sourceLink > a {
+  transition: 0.2 ease-in-out;
+}
