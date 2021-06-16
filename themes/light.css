@@ -11,7 +11,7 @@ body.loaded .fadein {
 }
 
 body {
-  background-image: url("../logos/background.png") !important;
+  background-image: url("../backgrounds/background.png") !important;
   height: 100%;
   width: 100%;
   background-attachment: fixed;
@@ -120,13 +120,15 @@ a,
   color: #5d7daf;
 }
 
-.priorityLevel {
+.priorityLevel,
+#resetBtn:hover {
   border-color: #35455d;
 }
 
 #header button,
 #dateButton,
-.priorityLevel {
+.priorityLevel,
+#resetBtn:hover {
   color: #35455d;
   background-color: white;
   transition: 0.2s ease-in-out;
@@ -134,7 +136,8 @@ a,
 
 #header button:hover,
 #dateButton:hover,
-.priorityLevel:hover {
+.priorityLevel:hover,
+#resetBtn {
   color: white;
   background-color: #35455d;
 }

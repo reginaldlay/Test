@@ -5,18 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stopwatch</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+		rel="stylesheet"
+	/>
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/stopwatch.css">
-   
+    <link id="theme" rel="stylesheet" href="../themes/light.css">
 </head>
 <body>
-    
-   <div id="stopwatch"> 00:00:00 </div>
+    <div id="container">
+        <div id="userSession">
+            <div id="userIn">
+                <a href="pages/login.html">Login</a>
+                <a href="pages/register.html">Register</a>
+            </div>
+            <div id="userOut">
+                Logout
+            </div>
+        </div>
+        
+        <header class="site-header">
+            <a href="../index.html">
+                <div id="tdlLogo"></div>
+            </a>
+            <a href="../index.html">
+                <div id="calendarLink"></div>
+            </a>
+            <a href="priority.html">
+                <div id="notesLink"></div>
+            </a>
+            <a href="stopwatch.html">
+                <div id="stopwatchLink"></div>
+            </a>
+            <a href="timer.html">
+                <div id="timerLink"></div>
+            </a>
+        </header>
 
-   <div class="SWbuttons">
-       <button class="swbtn" onclick="startTimer()">Start</button>
-       <button class="swbtn" onclick="stopTimer()">Stop</button>
-       <button class="swbtn" onclick="resetTimer()">Reset</button>
-   </div>
+        <div id="time"></div>
+        <div id="stopwatchContainer">
+            <div id="stopwatch"> 00:00:00</div>
+
+            <div class="SWbuttons">
+                <button id="startBtn" class="swbtn" onclick="startTimer()">Start</button>
+                <button id="stopBtn" class="swbtn" onclick="stopTimer()">Stop</button>
+                <button id="resetBtn" class="swbtn" onclick="resetTimer()">Reset</button>
+            </div>
+        </div>
+    </div>
 
    <script src="../src/stopwatch.js"></script> 
 </body>
