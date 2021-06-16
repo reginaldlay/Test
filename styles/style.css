@@ -53,6 +53,13 @@ a {
   text-decoration: none;
 }
 
+#tdlLogo {
+  transition: transform 2s ease-in-out;
+}
+#tdlLogo:hover {
+  transform: rotate(180deg);
+}
+
 #userSession {
   margin-top: 2rem;
   display: flex;
