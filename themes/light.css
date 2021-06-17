@@ -3,6 +3,7 @@ body {
   height: 100%;
   width: 100%;
   background-attachment: fixed;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border: none !important;

@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/style.css" />
-    <link id="theme" rel="stylesheet" href="themes/dark.css" />
+    <link id="theme" rel="stylesheet" href="themes/light.css" />
   </head>
   <body>
     <div id="container">
@@ -84,8 +84,8 @@
       </div>
       <div id="themeSwitcher">
         <div>Bit too bright?</div>
-        <label class="switch">
-          <input type="checkbox" checked />
+        <label class="switch" id="realSwitcher">
+          <input type="checkbox" checked="true"/>
           <span class="slider"></span>
         </label>
       </div>
@@ -133,5 +133,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="src/calendar.js"></script>
     <script src="src/clock.js"></script>
+    <script src="src/theme.js"></script>
   </body>
 </html>
