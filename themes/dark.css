@@ -156,8 +156,8 @@ a,
 
 #newEventModal,
 #deleteEventModal {
-  background-color: #fcfdff;
-  color: #35455d;
+  background-color: #35455d;
+  color: white;
 }
 
 .padding {
@@ -237,4 +237,45 @@ select.error {
 #time,
 #sourceLink {
   color: #fcfdff;
+}
+
+.priorityLevel {
+  color: white;
+  background-color: #35455d;
+}
+
+.priorityLevel:hover {
+  color: black;
+}
+
+#txtb {
+  color: white;
+}
+
+.subheadTasks {
+  color: white;
+}
+
+.HighPrio > .task {
+  background-color: #f32415;
+  color: white;
+}
+
+.MedPrio > .task {
+  background-color: #eb3e3e;
+  color: white;
+}
+
+.LowPrio > .task {
+  background-color: #ee7575;
+  color: white;
+}
+
+#inputField .txtb {
+  color: white;
+  border-bottom-color: white;
+}
+
+#timerContainer > input {
+  background-color: rgba(255, 255, 255, 0);
 }
